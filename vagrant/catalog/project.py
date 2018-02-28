@@ -198,10 +198,12 @@ def Index():
 
     items = session.query(CatalogItem).all()
 
-    itemsByUser = filter(lambda x: x.user == login_session['username'], items)
-
-    itemsByUser = list(reversed(itemsByUser))
-    itemsByUser = itemsByUser[:5]
+    if isLogin:
+        itemsByUser = filter(lambda x: x.user == login_session['username'], items)
+        itemsByUser = list(reversed(itemsByUser))
+        itemsByUser = itemsByUser[:5]
+    else:
+        itemsByUser = []
 
     return render_template('catalog.html', catalogs = catalogs, items = itemsByUser, islogin = isLogin)
 
@@ -218,7 +220,10 @@ def ListItems(catalog_name):
 
     items = session.query(CatalogItem).filter_by(catalog_id = selectedCatalog.id)
 
-    itemsByUser = filter(lambda x: x.user == login_session['username'], items)
+    if isLogin:
+        itemsByUser = filter(lambda x: x.user == login_session['username'], items)
+    else:
+        itemsByUser = []
 
     return render_template('selectedCatalog.html', catalogs = catalogs, catalog = selectedCatalog, items = itemsByUser, islogin = isLogin)
 
