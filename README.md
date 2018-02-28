@@ -1,4 +1,2 @@
-fullstack-nanodegree-vm
-=============
-
-Common code for the Relational Databases and Full Stack Fundamentals courses
+    git clone https://github.com/ZwiFTi/fullstack-itemcatalog.git
+    cd fullstack-itemcatalog/
