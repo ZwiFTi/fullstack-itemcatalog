@@ -182,7 +182,7 @@ def CatalogItemJSON(catalog_name, catalogitem_name):
 
 @app.route('/JSON')
 def CatalogJSON():
-    catalogs = session.query(Catalog).all()
+    catalogs = session.query(CatalogItem).all()
     j = jsonify(CatalogItems=[e.serialize for e in catalogs])
     return j
 

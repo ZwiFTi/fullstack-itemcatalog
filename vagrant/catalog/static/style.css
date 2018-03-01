@@ -27,6 +27,16 @@ body {
   flex-direction: row;
 }
 
+.items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.items div {
+  width: 100%;
+}
+
 i {
   height: 48px;
   width: 48px;

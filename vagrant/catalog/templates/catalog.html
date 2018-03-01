@@ -31,7 +31,7 @@
       <h2>Latest items</h2>
 
       {% for i in items %}
-      <p><a href = '{{url_for('Details', catalog_name = i.catalog.name, catalogitem_name = i.name) }}'>{{i.name}} - <i>({{i.catalog.name}})<i></a></p>
+      <a href = '{{url_for('Details', catalog_name = i.catalog.name, catalogitem_name = i.name) }}'>{{i.name}} - ({{i.catalog.name}})</a>
       {% endfor %}
     </div>
   </div>

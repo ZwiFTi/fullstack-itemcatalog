@@ -28,13 +28,14 @@
 
     <div class='items'>
       <div class="items-heading">
-        <h2>{{ catalog.name }}</h2><a class="fa fa-plus" href = '{{url_for('newCatalogItem', catalog_name = catalog.name) }}'></a>
-    </div>
+        <div><h2>{{ catalog.name }}</h2></div>
+        <div><a class="fa fa-plus" href = '{{url_for('newCatalogItem', catalog_name = catalog.name) }}'>add</a></div>
+      </div>
 
       {% for i in items %}
-
-<p><a href = '{{url_for('Details', catalog_name = i.catalog.name, catalogitem_name = i.name) }}'>{{i.name}} - <i>({{i.catalog.name}})<i></a></p>
-
+      <div>
+        <a href = '{{url_for('Details', catalog_name = i.catalog.name, catalogitem_name = i.name) }}'>{{i.name}}</a>
+      </div>
       {% endfor %}
     </div>
   </div>
