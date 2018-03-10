@@ -29,6 +29,8 @@ Registered users will have the ability to post, edit and delete their own items.
     git clone https://github.com/ZwiFTi/fullstack-itemcatalog.git
     cd fullstack-itemcatalog/vagrant
     vagrant up && vagrant ssh
+    
+    cd /vagrant/catalog
 
     python populate_db.py
     python project.py
